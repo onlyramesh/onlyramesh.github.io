@@ -8,46 +8,90 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header / Hero Section -->
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header / Hero -->
   <header>
-    <h1>Hi, I'm  Ramesh</h1>
+    <h1>Hi, I'm Your Name</h1>
     <p>Cloud-native DevOps/SRE Engineer | Kubernetes | CI/CD | Cloud Infrastructure</p>
   </header>
 
-  <!-- About / Summary -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <p>Cloud-native DevOps/SRE engineer with <strong>8 years of experience</strong> building and operating scalable, highly available systems on Kubernetes. Strong expertise in CI/CD automation, cloud infrastructure provisioning, and observability. Proven collaborator bridging Product, Engineering, and Quality teams to deliver cloud-native platform features efficiently.</p>
   </section>
 
-  <!-- Skills / Expertise -->
+  <!-- Skills Section -->
   <section id="skills">
-    <h2>Core Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>CI/CD Pipelines</h3>
-        <p>Jenkins, Azure DevOps, automated testing, secure builds, and reliable deployments.</p>
+    <h2>Core Skills</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-button">CI/CD Pipelines</button>
+        <div class="accordion-content">
+          <p>Jenkins, Azure DevOps, automated testing, secure builds, and reliable deployments.</p>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Infrastructure Automation</h3>
-        <p>Terraform, Packer, multi-cloud deployments, highly available and scalable systems.</p>
+      <div class="accordion-item">
+        <button class="accordion-button">Infrastructure Automation</button>
+        <div class="accordion-content">
+          <p>Terraform, Packer, multi-cloud deployments, highly available and scalable systems.</p>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Cloud-Native Platforms</h3>
-        <p>Docker, Kubernetes, Helm, Kubernetes autoscaling, production-grade cluster operations.</p>
+      <div class="accordion-item">
+        <button class="accordion-button">Cloud-Native Platforms</button>
+        <div class="accordion-content">
+          <p>Docker, Kubernetes, Helm, Kubernetes autoscaling, production-grade cluster operations.</p>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Monitoring & Optimization</h3>
-        <p>Datadog, CloudWatch, Opsgenie; performance, reliability, and cost optimization.</p>
+      <div class="accordion-item">
+        <button class="accordion-button">Monitoring & Optimization</button>
+        <div class="accordion-content">
+          <p>Datadog, CloudWatch, Opsgenie; performance, reliability, and cost optimization.</p>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Collaboration</h3>
-        <p>Agile tools: Jira, Confluence, Slack, Mattermost; cross-team process improvements.</p>
+      <div class="accordion-item">
+        <button class="accordion-button">Collaboration</button>
+        <div class="accordion-content">
+          <p>Agile tools: Jira, Confluence, Slack, Mattermost; cross-team process improvements.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>CI/CD pipeline automation using Jenkins & Terraform.</p>
+        <a href="#">View Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Kubernetes-based microservices deployment with Helm.</p>
+        <a href="#">View Repo</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Cloud monitoring and cost optimization using Datadog & CloudWatch.</p>
+        <a href="#">View Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
   <section id="education">
     <h2>Education</h2>
     <p><strong>Dr Ambedkar Institute of Technology, Bengaluru</strong></p>
@@ -55,7 +99,7 @@
     <p>CGPA: 7.75 / 10.0</p>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:rameshron22@gmail.com">rameshron22@gmail.com</a></p>
@@ -63,8 +107,33 @@
     <p>GitHub: <a href="https://github.com/onlyramesh">github.com/onlyramesh</a></p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Ramesh S. All rights reserved.</p>
+    <p>© 2026 Your Name. All rights reserved.</p>
   </footer>
+
+  <!-- JS for Accordion & Smooth Scroll -->
+  <script>
+    // Accordion
+    const accButtons = document.querySelectorAll('.accordion-button');
+    accButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+        btn.classList.toggle('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
